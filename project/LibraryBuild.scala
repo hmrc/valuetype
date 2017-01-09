@@ -22,6 +22,7 @@ object LibraryBuild extends Build {
     .settings(scalaSettings ++ scoverageSettings: _*)
     .settings(
       targetJvm := "jvm-1.8",
+      scalaVersion := "2.11.8",
       libraryDependencies ++= LibraryDependencies(),
       resolvers := Seq(
         Resolver.bintrayRepo("hmrc", "releases"), "typesafe-releases" at "http://repo.typesafe.com/typesafe/releases/"
@@ -34,8 +35,8 @@ object LibraryBuild extends Build {
 private object LibraryDependencies {
 
   val compile = Seq(
-    "com.typesafe.play" %% "play" % "2.3.10" % "provided",
-    "com.typesafe.play" %% "play-json" % "2.3.10" % "provided"
+    "com.typesafe.play" %% "play" % "2.5.8" % "provided",
+    "com.typesafe.play" %% "play-json" % "2.5.8" % "provided"
   )
 
   val test = Seq(
